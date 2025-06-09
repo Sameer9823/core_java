@@ -29,6 +29,23 @@ public class Loop {
             System.out.println("Value of mm: " + mm);
             mm++;
         } while (mm > 120);
+
+        
+
+        for(int i = 1; i <= 5; i++) {
+            System.out.println("Day " + i);
+            for(int j = 9; j <= 18; j++) {
+               if(j <12){
+                     System.out.println("Morning: " + j + " AM");
+                } else if(j == 12) {
+                     System.out.println("Noon: " + j + " PM");
+                } else {
+                     System.out.println("Afternoon: " + (j - 12) + " PM");
+               }
+               
+            }
+           
+        }
     }
 
 }
