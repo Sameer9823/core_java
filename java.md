@@ -207,3 +207,5 @@ Would you like a **PDF version** or these notes converted into **PowerPoint/Goog
 
 
 conditional statement
+ternery
+loops
