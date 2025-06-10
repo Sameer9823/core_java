@@ -5,6 +5,12 @@ class Mobile {
     int prise;
     static String brand;
 
+    // Static block to initialize static variables if needed
+    static {
+        brand = "DefaultBrand";
+        System.out.println("Static block executed. Brand initialized to: " + brand);
+    }
+
     public void Show(){
         System.out.println(name + " : " + prise + " : " + brand);
     }
