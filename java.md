@@ -412,3 +412,381 @@ class Math {
 
 Would you like all these notes in **PDF, PPT, or Word format** for printing or sharing?
 
+
+Java Concepts Notes
+1. Array
+An array is a fixed-size, ordered collection of elements of the same data type.
+
+Declaration: type[] arrayName;
+Initialization: arrayName = new type[size];
+Example:
+
+int[] numbers = new int[5];
+numbers[0] = 10;
+numbers[1] = 20;
+
+2. Encapsulation
+Encapsulation is the bundling of data (fields) and methods that operate on that data, restricting direct access to some of an object's components using access modifiers.
+
+Key Points:
+Use private fields and public getter/setter methods.
+Protects data integrity and hides implementation details.
+
+
+Example:
+
+class Human {
+    private int age;
+    private String name;
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age > 0) this.age = age; // Validation
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+public class Encapsulation {
+    public static void main(String[] args) {
+        Human h = new Human();
+        h.setAge(25);
+        h.setName("John Doe");
+        System.out.println("Age: " + h.getAge() + ", Name: " + h.getName());
+    }
+}
+
+3. Constructor
+A constructor is a special method used to initialize objects. It has the same name as the class and no return type.
+
+Types: Default, parameterized.
+Example:
+
+class Car {
+    String model;
+    int year;
+
+    // Parameterized constructor
+    Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+    }
+}
+
+public class ConstructorDemo {
+    public static void main(String[] args) {
+        Car car = new Car("Toyota", 2020);
+        System.out.println("Model: " + car.model + ", Year: " + car.year);
+    }
+}
+
+4. Access Modifiers
+Access modifiers control the visibility of class members.
+
+Types:
+public: Accessible everywhere.
+protected: Accessible within the same package and subclasses.
+default (package-private): Accessible within the same package.
+private: Accessible only within the same class.
+
+
+Example:
+
+class AccessDemo {
+    public int publicVar = 1;
+    protected int protectedVar = 2;
+    int defaultVar = 3;
+    private int privateVar = 4;
+
+    public void show() {
+        System.out.println("Private: " + privateVar); // Accessible
+    }
+}
+
+5. Upcasting and Downcasting
+
+Upcasting: Casting a subclass object to a superclass type (implicit).
+Downcasting: Casting a superclass object to a subclass type (explicit, requires type checking).
+Example:
+
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Bark");
+    }
+}
+
+public class CastingDemo {
+    public static void main(String[] args) {
+        // Upcasting
+        Animal animal = new Dog();
+        animal.sound(); // Outputs: Bark
+
+        // Downcasting
+        if (animal instanceof Dog) {
+            Dog dog = (Dog) animal;
+            dog.sound(); // Outputs: Bark
+        }
+    }
+}
+
+6. Abstract Class
+An abstract class cannot be instantiated and may contain abstract methods (without implementation).
+
+Key Points:
+Declared with abstract keyword.
+Subclasses must implement abstract methods.
+
+
+Example:
+
+abstract class Shape {
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing Circle");
+    }
+}
+
+public class AbstractDemo {
+    public static void main(String[] args) {
+        Shape shape = new Circle();
+        shape.draw();
+    }
+}
+
+7. this, super, new
+
+this: Refers to the current object.
+super: Refers to the superclass object or constructor.
+new: Creates a new object.
+Example:
+
+class Parent {
+    int x = 10;
+}
+
+class Child extends Parent {
+    int x = 20;
+
+    Child() {
+        super(); // Call parent constructor
+        System.out.println("Child x: " + this.x); // Current object
+        System.out.println("Parent x: " + super.x); // Parent object
+    }
+}
+
+public class ThisSuperDemo {
+    public static void main(String[] args) {
+        Child child = new Child(); // new creates object
+    }
+}
+
+8. Autoboxing
+Autoboxing is the automatic conversion between primitive types and their wrapper classes.
+
+Example:
+
+public class AutoboxingDemo {
+    public static void main(String[] args) {
+        int i = 10;
+        Integer intObj = i; // Autoboxing
+        int j = intObj; // Unboxing
+        System.out.println("Integer: " + intObj + ", int: " + j);
+    }
+}
+
+9. Polymorphism
+Polymorphism allows methods to be used in different ways based on the object type (method overriding or overloading).
+
+Types:
+Compile-time (overloading).
+Runtime (overriding).
+
+
+Example:
+
+class Animal {
+    void sound() {
+        System.out.println("Some sound");
+    }
+}
+
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Meow");
+    }
+}
+
+public class PolymorphismDemo {
+    public static void main(String[] args) {
+        Animal animal = new Cat(); // Runtime polymorphism
+        animal.sound(); // Outputs: Meow
+    }
+}
+
+10. Overriding
+Overriding is when a subclass provides a specific implementation of a method defined in its superclass.
+
+Example:
+
+class Vehicle {
+    void start() {
+        System.out.println("Vehicle starting");
+    }
+}
+
+class Bike extends Vehicle {
+    void start() {
+        System.out.println("Bike starting");
+    }
+}
+
+public class OverridingDemo {
+    public static void main(String[] args) {
+        Bike bike = new Bike();
+        bike.start(); // Outputs: Bike starting
+    }
+}
+
+11. Overloading
+Overloading is defining multiple methods with the same name but different parameters.
+
+Example:
+
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class OverloadingDemo {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println(calc.add(5, 10)); // Outputs: 15
+        System.out.println(calc.add(5.5, 10.5)); // Outputs: 16.0
+    }
+}
+
+12. String, StringBuffer, StringBuilder
+
+String: Immutable, thread-safe.
+StringBuffer: Mutable, thread-safe (synchronized).
+StringBuilder: Mutable, not thread-safe (faster).
+Example:
+
+public class StringDemo {
+    public static void main(String[] args) {
+        String str = "Hello";
+        StringBuffer sbf = new StringBuffer("Hello");
+        StringBuilder sbd = new StringBuilder("Hello");
+
+        sbf.append(" World");
+        sbd.append(" World");
+
+        System.out.println("String: " + str); // Hello
+        System.out.println("StringBuffer: " + sbf); // Hello World
+        System.out.println("StringBuilder: " + sbd); // Hello World
+    }
+}
+
+13. Static Method
+Static methods belong to the class, not an instance, and are called using the class name.
+
+Example:
+
+class MathUtils {
+    static int square(int x) {
+        return x * x;
+    }
+}
+
+public class StaticDemo {
+    public static void main(String[] args) {
+        System.out.println("Square: " + MathUtils.square(5)); // Outputs: 25
+    }
+}
+
+14. Final
+The final keyword prevents modification or extension.
+
+Class: Cannot be subclassed.
+Method: Cannot be overridden.
+Variable: Cannot be reassigned.
+Example:
+
+final class FinalClass {
+    final int x = 10;
+
+    final void show() {
+        System.out.println("Value: " + x);
+    }
+}
+
+public class FinalDemo {
+    public static void main(String[] args) {
+        FinalClass fc = new FinalClass();
+        fc.show();
+    }
+}
+
+15. Wrapper Class
+Wrapper classes provide object representations of primitive types (e.g., Integer for int).
+
+Example:
+
+public class WrapperDemo {
+    public static void main(String[] args) {
+        Integer intObj = Integer.valueOf(100);
+        System.out.println("Wrapper: " + intObj);
+    }
+}
+
+16. Package
+A package is a namespace for organizing classes and interfaces.
+
+Example:
+
+package com.example;
+
+public class PackageDemo {
+    public static void main(String[] args) {
+        System.out.println("Inside com.example package");
+    }
+}
+
+17. Import
+The import statement allows access to classes from other packages.
+
+Example:
+
+import java.util.ArrayList;
+
+public class ImportDemo {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Java");
+        System.out.println(list);
+    }
+}
+
