@@ -205,7 +205,210 @@ public class Conversion {
 
 Would you like a **PDF version** or these notes converted into **PowerPoint/Google Slides** format too?
 
+Here are **comprehensive notes** on the remaining Java concepts you asked for:
 
-conditional statement
-ternery
-loops
+---
+
+## 🔁 1. **Conditional Statements in Java**
+
+Conditional statements control the flow of a program **based on conditions** (true/false).
+
+### 🔹 Types:
+
+* **if**
+* **if-else**
+* **if-else-if**
+* **switch**
+
+### 🧠 Examples:
+
+```java
+int age = 18;
+if (age >= 18) {
+    System.out.println("Eligible to vote");
+} else {
+    System.out.println("Not eligible");
+}
+```
+
+---
+
+## ❓ 2. **Ternary Operator in Java**
+
+The **ternary operator** is a **short form of if-else**.
+
+### 🔹 Syntax:
+
+```java
+condition ? value_if_true : value_if_false;
+```
+
+### 🧠 Example:
+
+```java
+int a = 10, b = 20;
+int max = (a > b) ? a : b;
+System.out.println(max); // 20
+```
+
+---
+
+## 🔄 3. **Loops in Java**
+
+Loops allow **repetitive execution** of a block of code.
+
+### 🔹 Types:
+
+* **for loop**
+* **while loop**
+* **do-while loop**
+* **for-each loop** (for arrays/collections)
+
+### 🧠 Examples:
+
+```java
+// for loop
+for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+
+// while loop
+int i = 1;
+while (i <= 5) {
+    System.out.println(i);
+    i++;
+}
+
+// do-while loop
+int j = 1;
+do {
+    System.out.println(j);
+    j++;
+} while (j <= 5);
+```
+
+---
+
+## 💡 4. **OOPs in Java (Object-Oriented Programming)**
+
+Java is an **Object-Oriented Programming Language**.
+
+### 🔹 4 Pillars of OOP:
+
+| Concept           | Description                                                      |
+| ----------------- | ---------------------------------------------------------------- |
+| **Encapsulation** | Binding data and code into a single unit (class).                |
+| **Inheritance**   | One class inherits properties of another.                        |
+| **Polymorphism**  | One task performed in many ways (method overloading/overriding). |
+| **Abstraction**   | Hiding internal details and showing only essential info.         |
+
+---
+
+## 🧱 5. **Class and Object**
+
+### 🔹 Class:
+
+* A **blueprint** for objects.
+* It defines properties (variables) and behaviors (methods).
+
+```java
+class Car {
+    String color;
+    void drive() {
+        System.out.println("Car is driving");
+    }
+}
+```
+
+### 🔹 Object:
+
+* An **instance** of a class.
+* Created using the `new` keyword.
+
+```java
+Car c1 = new Car();
+c1.color = "Red";
+c1.drive();
+```
+
+---
+
+## ⚙️ 6. **JDK (Java Development Kit)**
+
+* JDK is the **complete package** for Java development.
+* Contains:
+
+  * JRE (Java Runtime Environment)
+  * Development tools like `javac`, `java`, debugger, etc.
+
+📦 **JDK = JRE + Compiler + Debugger + Tools**
+
+---
+
+## 🔁 7. **Method Overloading**
+
+* Defining **multiple methods** in the same class with **same name but different parameters** (type or number).
+
+### 🧠 Example:
+
+```java
+class Math {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+```
+
+---
+
+## 🧠 8. **Stack and Heap Memory**
+
+### 🔹 Stack Memory:
+
+* Stores **method calls**, local variables.
+* Follows **LIFO (Last In First Out)**.
+* Faster and automatically managed.
+
+### 🔹 Heap Memory:
+
+* Stores **objects and instance variables**.
+* Slower, but large memory size.
+* Requires garbage collection.
+
+### 📊 Difference Table:
+
+| Feature      | Stack                    | Heap                  |
+| ------------ | ------------------------ | --------------------- |
+| Stores       | Method calls, local vars | Objects, class fields |
+| Access Speed | Fast                     | Slower                |
+| Memory Size  | Small                    | Large                 |
+| Lifecycle    | Short (method scope)     | Long (global scope)   |
+| Managed by   | JVM                      | Garbage Collector     |
+
+---
+
+## ✅ Summary
+
+| Concept            | Explanation                                                                   |
+| ------------------ | ----------------------------------------------------------------------------- |
+| Conditional        | Executes blocks based on true/false conditions.                               |
+| Ternary            | Shortcut for if-else.                                                         |
+| Loops              | Repeats code (for, while, do-while).                                          |
+| OOPs               | Class-based structure: Encapsulation, Inheritance, Polymorphism, Abstraction. |
+| Class/Object       | Class is a blueprint; object is an instance.                                  |
+| JDK                | Complete toolkit for Java (includes compiler + runtime).                      |
+| Method Overloading | Same method name, different parameters.                                       |
+| Stack vs Heap      | Stack is for execution; heap is for objects.                                  |
+
+---
+
+Would you like all these notes in **PDF, PPT, or Word format** for printing or sharing?
+
