@@ -1,6 +1,6 @@
 
-abstract class Computer{
-    public abstract void code();
+interface Computer{
+     void code();
 }
 
 
@@ -10,13 +10,13 @@ class Developer{
     }
 }
 
-class Desktop extends Computer {
+class Desktop implements Computer {
     public void code(){
         System.out.println("Coding in Python");
     }
 }
 
-class Laptop extends Computer {
+class Laptop implements Computer {
   
 
     @Override
