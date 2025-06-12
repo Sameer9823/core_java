@@ -790,3 +790,185 @@ public class ImportDemo {
     }
 }
 
+
+Here are the **Java notes** for the additional topics you mentioned — **Interface, Annotation, Inner Class, Lambda Function, and Enum** — complete with **theory** and **examples**:
+
+---
+
+## ✅ 17. **Interface**
+
+**Theory**:
+An interface in Java is a reference type, similar to a class, that can contain only constants, method signatures, default methods, static methods, and nested types.
+It is used to achieve **abstraction** and **multiple inheritance** in Java.
+
+**Types of Interface**:
+
+* **Normal Interface**
+* **Functional Interface** (Single Abstract Method)
+* **Marker Interface** (No methods)
+
+**Example**:
+
+```java
+interface Animal {
+    void sound();  // abstract method
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Bark");
+    }
+}
+```
+
+---
+
+## ✅ 18. **Annotation**
+
+**Theory**:
+Annotations provide **metadata** about the program but are **not part of the program itself**. They have no direct effect on the operation of the code they annotate.
+
+**Common Annotations**:
+
+* `@Override`
+* `@Deprecated`
+* `@SuppressWarnings`
+* Custom Annotations (`@interface`)
+
+**Example**:
+
+```java
+class Test {
+    @Override
+    public String toString() {
+        return "Test class";
+    }
+}
+```
+
+**Custom Annotation Example**:
+
+```java
+@interface Info {
+    String author();
+}
+
+@Info(author = "Sameer")
+class MyClass {}
+```
+
+---
+
+## ✅ 19. **Inner Class**
+
+**Theory**:
+A class declared inside another class. Useful for logically grouping classes that will be used only in one place.
+
+**Types of Inner Classes**:
+
+* **Member Inner Class**
+* **Static Nested Class**
+* **Local Inner Class**
+* **Anonymous Inner Class**
+
+**Example (Member Inner Class)**:
+
+```java
+class Outer {
+    class Inner {
+        void display() {
+            System.out.println("Inner class method");
+        }
+    }
+}
+```
+
+**Usage**:
+
+```java
+Outer.Inner obj = new Outer().new Inner();
+obj.display();
+```
+
+---
+
+## ✅ 20. **Lambda Function (Lambda Expression)**
+
+**Theory**:
+Lambda expressions are used to provide **implementation of functional interfaces** (interfaces with one abstract method). Introduced in **Java 8**.
+
+**Syntax**:
+
+```java
+(parameters) -> expression
+```
+
+**Example**:
+
+```java
+interface Drawable {
+    void draw();
+}
+
+public class LambdaDemo {
+    public static void main(String[] args) {
+        Drawable d = () -> System.out.println("Drawing");
+        d.draw();
+    }
+}
+```
+
+**With Parameters**:
+
+```java
+interface Addable {
+    int add(int a, int b);
+}
+
+Addable sum = (a, b) -> a + b;
+System.out.println(sum.add(10, 20));
+```
+
+---
+
+## ✅ 21. **Enum (Enumeration)**
+
+**Theory**:
+Enums define a fixed set of constants. They are a special Java type used to define collections of constants.
+
+**Example**:
+
+```java
+enum Day {
+    MONDAY, TUESDAY, WEDNESDAY;
+}
+
+public class EnumTest {
+    public static void main(String[] args) {
+        Day d = Day.MONDAY;
+        System.out.println(d);
+    }
+}
+```
+
+**Enum with fields and methods**:
+
+```java
+enum Status {
+    SUCCESS(200), ERROR(404);
+
+    private int code;
+    Status(int code) {
+        this.code = code;
+    }
+    public int getCode() {
+        return code;
+    }
+}
+```
+
+---
+
+Would you like me to compile **all 21 topics** into a single **PDF or formatted printable file** for easier revision?
+
+
