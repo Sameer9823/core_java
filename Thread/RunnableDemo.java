@@ -48,7 +48,7 @@ public class RunnableDemo {
         Runnable obj2 = () ->{
             for(int i = 0;i < 10; i++){
                counter.increment();
-            //    System.out.println("Counter: " + counter.count);
+               System.out.println("Counter: " + counter.count);
             }
         };
 
