@@ -7,7 +7,7 @@ class A extends Thread {
              
              Thread.sleep(10);
            } catch (Exception e) {
-            
+            System.out.println("Eeror" + e.getMessage());
            }
         }
     }
