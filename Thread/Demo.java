@@ -20,7 +20,7 @@ class B implements Runnable {
              
              Thread.sleep(10);
            } catch (Exception e) {
-            // TODO: handle exception
+            System.out.println("Eeror" + e.getMessage());
            }
            
         }
