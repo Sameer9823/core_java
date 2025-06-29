@@ -25,6 +25,15 @@ public class Typecast {
       byte k = (byte) a;
       System.out.println(k);
 
+      byte e = 127;
+      int s = e;
+      System.out.println(s);
+
+      int j = 343;
+      byte n = (byte)j;
+      System.out.println(n);
+
+
       float f = 3.14f;
       int i = (int) f; // Explicit type casting from float to int
       System.out.println(i);
@@ -39,5 +48,19 @@ public class Typecast {
 
       A obj = new A();
       obj.show1();
+
+
+      int lo = 56;
+      lo++;
+      System.out.println(lo);
+      lo--;
+      System.out.println(lo);
+      lo--;
+      System.out.println(lo);
+
+      int p = 89;
+      int q = 8;
+      boolean resf = p ==q;
+      System.out.println(resf);
     }
 }

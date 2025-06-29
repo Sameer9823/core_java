@@ -8,6 +8,7 @@ public class Dataypes {
         short shortValue = 20; // Short data type
         long longValue = 100000L; // Long data type
         float floatValue = 5.5f; // Float data type
+        boolean t = true;
 
         double sum = num1 + num2; // Adding integer and double
         System.out.println(message + sum); // Printing the result
