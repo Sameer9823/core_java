@@ -17,6 +17,12 @@ public class Demo {
         Calculator calculator = new Calculator();
         int result = calculator.add(num1, num2);
         System.out.println("Result of addition: " + result);
+        
+        // This is a simple Java program that demonstrates the use of a Calculator class to add two numbers.
+        // The Calculator class has a method called add that takes two integers as parameters and returns their
 
+        Calculator calculator2 = new Calculator();
+        int result2 = calculator2.add(5, 7);
+        System.out.println("Result of addition: " + result2);
     }
 }
