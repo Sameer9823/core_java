@@ -795,6 +795,222 @@ Here are the **Java notes** for the additional topics you mentioned — **Interf
 
 ---
 
+
+Here are your **structured OOPS concept notes with previous code examples** for quick revision:
+
+---
+
+# 🌟 **OOPS Concepts Notes**
+
+### **1. Encapsulation**
+
+✅ **Definition:**
+Wrapping data (variables) and methods into a single unit (class) and restricting direct access to some components.
+
+✅ **Advantages:**
+
+* Data hiding
+* Control over data via getters/setters
+* Increased security and maintainability
+
+✅ **Example:**
+
+```java
+class Student {
+    private String name; // private data members
+    private int age;
+    
+    // public getters and setters
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setAge(int age){
+        this.age = age;
+    }
+
+    public int getAge(){
+        return age;
+    }
+}
+
+public class TestEncapsulation {
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.setName("Sameer");
+        s.setAge(21);
+        System.out.println(s.getName() + " " + s.getAge());
+    }
+}
+```
+
+---
+
+### **2. Inheritance**
+
+✅ **Definition:**
+Acquiring properties and behavior of parent class by child class using `extends` keyword.
+
+✅ **Advantages:**
+
+* Code reusability
+* Method overriding support
+* Hierarchical classification
+
+✅ **Example:**
+
+```java
+class Animal {
+    void eat() {
+        System.out.println("Eating...");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Barking...");
+    }
+}
+
+public class TestInheritance {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat(); // inherited method
+        d.bark(); // own method
+    }
+}
+```
+
+---
+
+### **3. Polymorphism**
+
+✅ **Definition:**
+One name, many forms. Two types:
+
+---
+
+#### **(a) Compile-time Polymorphism (Method Overloading)**
+
+✅ **Definition:** Same method name with different parameters in the same class.
+
+```java
+class MathUtils {
+    int add(int a, int b) {
+        return a + b;
+    }
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class TestOverloading {
+    public static void main(String[] args) {
+        MathUtils m = new MathUtils();
+        System.out.println(m.add(2, 3));    // calls int version
+        System.out.println(m.add(2.5, 3.5)); // calls double version
+    }
+}
+```
+
+---
+
+#### **(b) Runtime Polymorphism (Method Overriding)**
+
+✅ **Definition:** Child class provides specific implementation of a method already defined in its parent class.
+
+```java
+class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Meow");
+    }
+}
+
+public class TestOverriding {
+    public static void main(String[] args) {
+        Animal a = new Cat(); // upcasting
+        a.sound(); // calls Cat's sound()
+    }
+}
+```
+
+---
+
+### **4. Abstraction**
+
+✅ **Definition:**
+Hiding internal implementation details and showing only functionality to the user.
+
+✅ **Achieved via:**
+
+* Abstract classes
+* Interfaces
+
+✅ **Advantages:**
+
+* Reduces complexity
+* Focus on what an object does rather than how
+
+✅ **Example using Abstract Class:**
+
+```java
+abstract class Shape {
+    abstract void draw(); // abstract method
+    
+    void color() {
+        System.out.println("Shape has color");
+    }
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing Circle");
+    }
+}
+
+public class TestAbstraction {
+    public static void main(String[] args) {
+        Shape s = new Circle();
+        s.draw(); // implemented method
+        s.color(); // inherited concrete method
+    }
+}
+```
+
+---
+
+## 🎯 **Final Revision Table**
+
+| 🔷 Concept        | 🔑 Definition                            | 💻 Example                         |
+| ----------------- | ---------------------------------------- | ---------------------------------- |
+| **Encapsulation** | Data hiding & access via getters/setters | Private variables + public methods |
+| **Inheritance**   | Child acquires parent properties         | `extends` keyword                  |
+| **Polymorphism**  | One name many forms                      | Overloading & Overriding           |
+| **Abstraction**   | Hiding implementation details            | Abstract classes / Interfaces      |
+
+---
+
+### ✅ **Tips for Interviews:**
+
+✔ Always define each concept in **1 line**
+✔ Write **simple examples** from above
+✔ Mention **advantages** for each
+
+---
+
+If you want, I can prepare **Interface examples, Java 8 OOPS enhancements, or UML diagrams** for your upcoming OOPS revision tomorrow. Let me know your plan.
+
+
 ## ✅ 17. **Interface**
 
 **Theory**:
